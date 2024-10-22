@@ -47,12 +47,11 @@ const UIBuilder = () => {
   useEffect(() => {
     const fetchCurrentLayout = async () => {
       try {
-        const API_KEY = "blt01ca4669cb8b3ea0"; // Your stack API key
-        const MANAGEMENT_TOKEN = "cs1943794d32257850e40ba4c5"; // Your management token
-        const entryId = "bltda96d9fe6a336cc5"; // Your entry ID
-        const contentTypeId = "visuals"; // Your content type ID
+        const API_KEY = "blt01ca4669cb8b3ea0";
+        const MANAGEMENT_TOKEN = "cs1943794d32257850e40ba4c5";
+        const entryId = "bltda96d9fe6a336cc5";
+        const contentTypeId = "visuals";
 
-        // Fetch the current entry
         const response = await axios.get(
           `https://eu-api.contentstack.com/v3/content_types/${contentTypeId}/entries/${entryId}`,
           {
@@ -64,13 +63,11 @@ const UIBuilder = () => {
           }
         );
 
-        // Assuming the page_layout is in the response data
         const pageLayout = response.data.entry.page_layout.visuals.home_page;
         setComponentsStyles(pageLayout);
 
         let newComponentCounts = { ...componentCounts };
 
-        // Map over the keys of the `home_page` object to update droppedComponents
         const componentsArray = Object.keys(pageLayout)
           .map((key) => {
             if (key.startsWith("hero_component")) {
@@ -100,7 +97,7 @@ const UIBuilder = () => {
             }
             return null;
           })
-          .filter(Boolean); // Filter out null values
+          .filter(Boolean);
 
         setComponentCounts(newComponentCounts);
         setDroppedComponents(componentsArray);
@@ -120,17 +117,14 @@ const UIBuilder = () => {
     setSelectedComponentId(id);
   };
 
-  // Function to handle dropping a component
   const handleDrop = (item) => {
     setDroppedComponents((prev) => [...prev, item]);
     setComponentsStyles((prev) => ({
       ...prev,
       [item.id]: {},
     }));
-    console.log("components are", droppedComponents);
   };
 
-  // Function to remove a component
   const removeComponent = (index) => {
     setDroppedComponents((prev) => prev.filter((_, i) => i !== index));
   };
@@ -252,7 +246,6 @@ const RightSidebar = ({
   setIsJsonViewerOpen,
 }) => {
   const [open, setOpen] = useState(true);
-  console.log("component styles are", componentsStyles);
 
   const [isShining, setIsShining] = useState(false);
 
@@ -316,7 +309,6 @@ const RightSidebar = ({
         }
       );
 
-      console.log("Entry updated successfully:", response.data);
       // Optionally, you can handle success feedback for the user here
     } catch (error) {
       console.error(

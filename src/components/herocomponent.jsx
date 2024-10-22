@@ -2,7 +2,6 @@ import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 const HeroComponent = ({ id, onClick, selected, styles }) => {
-  console.log("slected styles", styles.title_font_size);
   return (
     <div
       id={id}

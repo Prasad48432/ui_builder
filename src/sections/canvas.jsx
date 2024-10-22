@@ -64,8 +64,7 @@ const CanvasContent = ({
         return;
       }
       const newId = generateUniqueId(item.type);
-      onDrop({ ...item, id: newId, page_type: item.page_type });
-      console.log("components dropped are", droppedComponents); // Add the new unique id to the dropped component
+      onDrop({ ...item, id: newId, page_type: item.page_type });// Add the new unique id to the dropped component
     },
   });
 
@@ -81,7 +80,6 @@ const CanvasContent = ({
   };
 
   const handleRemoveComponent = (index, componentId) => {
-    console.log("componentRemoved", index, componentId);
     removeComponent(index);
 
     if (selectedComponentId === componentId) {

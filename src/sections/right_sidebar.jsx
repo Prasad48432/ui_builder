@@ -12,7 +12,6 @@ const RightSidebar = ({
   setIsJsonViewerOpen,
 }) => {
   const [open, setOpen] = useState(true);
-  console.log("component styles are", componentsStyles);
 
   const [isShining, setIsShining] = useState(false);
 
@@ -75,7 +74,6 @@ const RightSidebar = ({
         }
       );
 
-      console.log("Entry updated successfully:", response.data);
     } catch (error) {
       console.error(
         "Error updating entry:",
