@@ -116,22 +116,22 @@ const RightSidebar = ({
                 </h3>
               )}
             </span>
-            <span
-              onClick={() => setIsJsonViewerOpen(true)}
-              className={`w-[85%] font-semibold mb-3 border border-primarybrdr cursor-pointer bg-secondarybg mx-auto flex items-center justify-center rounded-md px-2 py-1 text-primarytext ${
-                isShining ? "shine" : ""
-              }`}
-            >
-              JSON
-            </span>
             {componentsStyles && Object.keys(componentsStyles).length > 0 && (
               <span
-                onClick={handleUpdateLayout}
-                className="w-[85%] font-semibold mb-3 border border-primarybrdr cursor-pointer bg-secondarybg mx-auto flex items-center justify-center rounded-md px-2 py-1 text-primarytext"
+                onClick={() => setIsJsonViewerOpen(true)}
+                className={`w-[85%] font-semibold mb-3 border border-primarybrdr cursor-pointer bg-secondarybg mx-auto flex items-center justify-center rounded-md px-2 py-1 text-primarytext ${
+                  isShining ? "shine" : ""
+                }`}
               >
-                Update
+                JSON
               </span>
             )}
+            <span
+              onClick={handleUpdateLayout}
+              className="w-[85%] font-semibold mb-3 border border-primarybrdr cursor-pointer bg-secondarybg mx-auto flex items-center justify-center rounded-md px-2 py-1 text-primarytext"
+            >
+              Update
+            </span>
             <hr className="border-b border-primarybrdr w-full"></hr>
             <div className="flex flex-col gap-6 items-center justify-center ml-3 mt-3 mx-auto">
               {selectedComponentId && (
