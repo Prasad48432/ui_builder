@@ -82,7 +82,7 @@ const RightSidebar = ({
           color: "#89e15a",
           border: "1px solid #121212",
         },
-      });;
+      });
     } catch (error) {
       console.error(
         "Error updating entry:",
@@ -116,16 +116,14 @@ const RightSidebar = ({
                 </h3>
               )}
             </span>
-            {componentsStyles && Object.keys(componentsStyles).length > 0 && (
-              <span
-                onClick={() => setIsJsonViewerOpen(true)}
-                className={`w-[85%] font-semibold mb-3 border border-primarybrdr cursor-pointer bg-secondarybg mx-auto flex items-center justify-center rounded-md px-2 py-1 text-primarytext ${
-                  isShining ? "shine" : ""
-                }`}
-              >
-                JSON
-              </span>
-            )}
+            <span
+              onClick={() => setIsJsonViewerOpen(true)}
+              className={`w-[85%] font-semibold mb-3 border border-primarybrdr cursor-pointer bg-secondarybg mx-auto flex items-center justify-center rounded-md px-2 py-1 text-primarytext ${
+                isShining ? "shine" : ""
+              }`}
+            >
+              JSON
+            </span>
             {componentsStyles && Object.keys(componentsStyles).length > 0 && (
               <span
                 onClick={handleUpdateLayout}
