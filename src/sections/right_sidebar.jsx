@@ -4,6 +4,7 @@ import { FiChevronsRight, FiChevronsLeft } from "react-icons/fi";
 import { CiTextAlignLeft, CiTextAlignRight } from "react-icons/ci";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { toast } from "sonner";
 
 const RightSidebar = ({
   componentsStyles,
@@ -74,6 +75,14 @@ const RightSidebar = ({
         }
       );
 
+      toast.success("Layout updated Successfully", {
+        duration: 1500,
+        style: {
+          background: "#131313",
+          color: "#89e15a",
+          border: "1px solid #121212",
+        },
+      });;
     } catch (error) {
       console.error(
         "Error updating entry:",
